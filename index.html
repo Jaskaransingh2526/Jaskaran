@@ -5,43 +5,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jaskaran Singh - 2436429</title>
     
-    <!-- Load Tailwind CSS for modern, responsive styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
     <!-- Load Inter font for clean typography -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* Apply the Inter font to the whole body */
+        /* CSS Reset & Base Styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            background: linear-gradient(to bottom right, #eef2ff, #ffffff, #faf5ff);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background-color: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 50px rgba(8, 112, 184, 0.07);
+            border: 1px solid #f3f4f6;
+            padding: 2.5rem;
+            text-align: center;
+            width: 100%;
+            max-width: 28rem;
+            transition: transform 0.5s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-8px);
+        }
+
+        /* Avatar Container */
+        .avatar-container {
+            width: 7rem;
+            height: 7rem;
+            background: linear-gradient(to top right, #e0e7ff, #f3e8ff);
+            border-radius: 50%;
+            margin: 0 auto 2rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06), 0 0 0 4px #ffffff;
+        }
+
+        .avatar-icon {
+            width: 3.5rem;
+            height: 3.5rem;
+            color: #6366f1;
+            filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
+        }
+
+        /* Typography */
+        .profile-name {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: #111827;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+
+        /* Roll Number Badge */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(238, 242, 255, 0.8);
+            border: 1px solid #e0e7ff;
+            border-radius: 9999px;
+            padding: 0.5rem 1.25rem;
+            margin-top: 0.5rem;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .badge-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: #6366f1;
+            margin-right: 0.5rem;
+        }
+
+        .badge-text {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: #3730a3;
+        }
+
+        .roll-number {
+            font-weight: 700;
+            letter-spacing: 0.025em;
+            margin-left: 0.25rem;
+        }
+
+        /* Responsive padding for larger screens */
+        @media (min-width: 640px) {
+            .profile-card {
+                padding: 3.5rem;
+            }
         }
     </style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 flex items-center justify-center p-6 antialiased">
+<body>
 
     <!-- Profile Card Container -->
-    <div class="bg-white rounded-3xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.07)] border border-gray-100 p-10 sm:p-14 text-center max-w-md w-full transition-transform duration-500 hover:-translate-y-2">
+    <div class="profile-card">
         
         <!-- Avatar Icon -->
-        <div class="w-28 h-28 bg-gradient-to-tr from-indigo-100 to-purple-100 rounded-full mx-auto flex items-center justify-center mb-8 shadow-inner ring-4 ring-white">
-            <svg class="w-14 h-14 text-indigo-500 drop-shadow-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <div class="avatar-container">
+            <svg class="avatar-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
             </svg>
         </div>
 
         <!-- Name -->
-        <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight mb-3">
+        <h1 class="profile-name">
             Jaskaran Singh
         </h1>
 
         <!-- Roll Number Badge -->
-        <div class="inline-flex items-center justify-center bg-indigo-50/80 border border-indigo-100 rounded-full px-5 py-2 mt-2 shadow-sm">
-            <svg class="w-5 h-5 text-indigo-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <div class="badge">
+            <svg class="badge-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"></path>
             </svg>
-            <p class="text-lg font-medium text-indigo-800">
-                Roll No: <span class="font-bold tracking-wide ml-1">2436429</span>
+            <p class="badge-text">
+                Roll No: <span class="roll-number">2436429</span>
             </p>
         </div>
 
